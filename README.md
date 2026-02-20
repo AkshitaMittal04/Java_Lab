@@ -30,3 +30,34 @@ public class Calc {
       div(var1, var2);
 ```
 <img width="392" height="221" alt="Screenshot (98)" src="https://github.com/user-attachments/assets/b7ff48ae-06f0-4e9d-aca4-2e841c9ea1a6" />
+
+
+
+
+
+```
+class Student {
+
+    String name;
+    int age;
+
+    // Constructor
+    Student(String n, int a) {
+        name = n;
+        age = a;
+    }
+
+    void display() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+
+    public static void main(String[] args) {
+        // Creating object
+        Student s1 = new Student("Akshita", 20);
+        s1.display();
+    }
+}
+```
+<img width="497" height="231" alt="Screenshot (99)" src="https://github.com/user-attachments/assets/bf076657-d0a8-4cf1-b13b-ddb5ac2060d3" />
+
