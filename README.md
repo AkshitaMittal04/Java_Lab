@@ -1,4 +1,9 @@
 // Source code is decompiled from a .class file using FernFlower decompiler (from Intellij IDEA).
+## INDEX
+[Program-01 WAP to add, sub , mul and division using Command Line Arguements](#Assi-1)
+
+[Program-02 WAP to demonstrate the use of Constructor](#Assi-2)
+## Assi-1
 ```
 
 public class Calc {
@@ -33,7 +38,7 @@ public class Calc {
 
 
 
-
+## Assi-2
 
 ```
 class Student {
