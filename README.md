@@ -1,1 +1,32 @@
-# Java_Lab
+// Source code is decompiled from a .class file using FernFlower decompiler (from Intellij IDEA).
+```
+
+public class Calc {
+   public Calc() {
+   }
+
+   public static void add(int var0, int var1) {
+      System.out.println(" Addition " + (var0 + var1));
+   }
+
+   public static void sub(int var0, int var1) {
+      System.out.println(" Subtraction " + (var0 - var1));
+   }
+
+   public static void mul(int var0, int var1) {
+      System.out.println(" Multiply " + var0 * var1);
+   }
+
+   public static void div(int var0, int var1) {
+      System.out.println("  Divison " + var0 / var1);
+   }
+
+   public static void main(String[] var0) {
+      int var1 = Integer.parseInt(var0[0]);
+      int var2 = Integer.parseInt(var0[1]);
+      add(var1, var2);
+      sub(var1, var2);
+      mul(var1, var2);
+      div(var1, var2);
+```
+<img width="392" height="221" alt="Screenshot (98)" src="https://github.com/user-attachments/assets/b7ff48ae-06f0-4e9d-aca4-2e841c9ea1a6" />
