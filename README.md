@@ -5,6 +5,7 @@
 [Program-02 WAP to demonstrate the use of Constructor](#Assi-2)
 
 [Program-03 Write a class to add two distances which is in the form of meter, centimeter and milimeter.](#Assi-3)
+
 ## Assi-1
 ```
 
@@ -70,7 +71,7 @@ class Student {
 
 
 
-
+```
 
 class Distance {
     int meter;
@@ -109,7 +110,6 @@ class Distance {
                 + millimeter + " mm");
     }
 }
-
 public class Dis {
     public static void main(String[] args) {
 
@@ -131,5 +131,5 @@ public class Dis {
         sum.display();
     }
 }
-
+```
 <img width="288" height="160" alt="image" src="https://github.com/user-attachments/assets/d485bc15-b2f1-4a89-b172-1d4be301abf5" />
