@@ -8,6 +8,7 @@
 
 [Program-04 Write a class to add two times which is in the form of hour, minutes and second](#Assi-4)
 
+[Program-05 Write a class to perform a Transpose of a Matrix.](#Assi-5)
 ## Assi-1
 ```
 
@@ -72,6 +73,7 @@ class Student {
 <img width="497" height="231" alt="Screenshot (99)" src="https://github.com/user-attachments/assets/bf076657-d0a8-4cf1-b13b-ddb5ac2060d3" />
 
 
+## Assi-3
 
 ```
 
@@ -137,6 +139,8 @@ public class Dis {
 <img width="288" height="160" alt="image" src="https://github.com/user-attachments/assets/d485bc15-b2f1-4a89-b172-1d4be301abf5" />
 
 
+## Assi-4
+
 ```
 class Time {
 
@@ -181,3 +185,53 @@ class Time {
 }
 ```
 <img width="326" height="181" alt="image" src="https://github.com/user-attachments/assets/1e2c54e7-8f87-496b-9f5c-f29d4b558c2d" />
+
+## Assi-5
+```
+class TransposeMatrix {
+
+    int matrix[][] = {
+            { 1, 2, 3 },
+            { 4, 5, 6 },
+            { 7, 8, 9 }
+    };
+
+    void transpose() {
+        int rows = matrix.length;
+        int cols = matrix[0].length;
+
+        int transpose[][] = new int[cols][rows];
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                transpose[j][i] = matrix[i][j];
+            }
+        }
+
+        System.out.println("Original Matrix:");
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        System.out.println("Transpose Matrix:");
+        for (int i = 0; i < cols; i++) {
+            for (int j = 0; j < rows; j++) {
+                System.out.print(transpose[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+public class Transpose {
+    public static void main(String[] args) {
+
+        TransposeMatrix obj = new TransposeMatrix(); // object creation
+        obj.transpose(); // method call
+    }
+}
+```
+<img width="305" height="216" alt="image" src="https://github.com/user-attachments/assets/97ed40cc-006c-495d-a615-fd94fa9c966f" />
