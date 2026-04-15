@@ -11,6 +11,8 @@
 [Program-05 Write a class to perform a Transpose of a Matrix.](#Assi-5)
 
 [Program-06 Write a class to perform sum of the matrices.](#Assi-6)
+
+[Program-07 Write a class to perform the multiplication of two matrices.](#Assi-7)
 ## Assi-1
 ```
 
@@ -277,7 +279,56 @@ public class Matrix{
         obj.display();              // display result
     }
 }
+
 ```
+## Assi-7
+```
+class MatrixMultiplication {
+    int a[][] = {
+            { 1, 2, 3 },
+            { 4, 5, 6 }
+    };
+
+    int b[][] = {
+            { 7, 8 },
+            { 9, 10 },
+            { 11, 12 }
+    };
+
+    int c[][] = new int[2][2];
+
+    void multiply() {
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                c[i][j] = 0;
+                for (int k = 0; k < 3; k++) {
+                    c[i][j] = c[i][j] + a[i][k] * b[k][j];
+                }
+            }
+        }
+    }
+
+    void display() {
+        System.out.println("Result Matrix:");
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                System.out.print(c[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+class MulMatrix {
+    public static void main(String args[]) {
+        MatrixMultiplication obj = new MatrixMultiplication();
+        obj.multiply();
+        obj.display();
+    }
+}
+```
+<img width="243" height="145" alt="image" src="https://github.com/user-attachments/assets/0d8693d6-539d-482f-a15a-4125debeb3cb" />
+
 <img width="168" height="137" alt="image" src="https://github.com/user-attachments/assets/df7877a5-aacf-467e-984a-fda7a5e46497" />
 
 
