@@ -9,6 +9,8 @@
 [Program-04 Write a class to add two times which is in the form of hour, minutes and second](#Assi-4)
 
 [Program-05 Write a class to perform a Transpose of a Matrix.](#Assi-5)
+
+[Program-06 Write a class to perform sum of the matrices.](#Assi-6)
 ## Assi-1
 ```
 
@@ -235,3 +237,47 @@ public class Transpose {
 }
 ```
 <img width="305" height="216" alt="image" src="https://github.com/user-attachments/assets/97ed40cc-006c-495d-a615-fd94fa9c966f" />
+
+## Assi-6
+
+```
+class Matrixx {
+    int A[][] = {{1,2},{3,4}};
+    int B[][] = {{5,6},{7,8}};
+    int C[][] = new int[2][2];
+
+    void addMatrix() {
+        for(int i = 0; i < 2; i++)
+        {
+            for(int j = 0; j < 2; j++)
+            {
+                C[i][j] = A[i][j] + B[i][j];
+            }
+        }
+    }
+
+    void display() {
+        System.out.println("Sum of matrices:");
+
+        for(int i = 0; i < 2; i++)
+        {
+            for(int j = 0; j < 2; j++)
+            {
+                System.out.print(C[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+public class Matrix{
+    public static void main(String[] args) {
+        Matrixx obj = new Matrixx();  // object creation
+        obj.addMatrix();            // method call
+        obj.display();              // display result
+    }
+}
+```
+<img width="168" height="137" alt="image" src="https://github.com/user-attachments/assets/df7877a5-aacf-467e-984a-fda7a5e46497" />
+
+
