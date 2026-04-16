@@ -13,6 +13,8 @@
 [Program-06 Write a class to perform sum of the matrices.](#Assi-6)
 
 [Program-07 Write a class to perform the multiplication of two matrices.](#Assi-7)
+
+[Program-08 Write a class to reverse a 1D array.](#Assi-8)
 ## Assi-1
 ```
 
@@ -329,6 +331,42 @@ class MulMatrix {
 ```
 <img width="243" height="145" alt="image" src="https://github.com/user-attachments/assets/0d8693d6-539d-482f-a15a-4125debeb3cb" />
 
-<img width="168" height="137" alt="image" src="https://github.com/user-attachments/assets/df7877a5-aacf-467e-984a-fda7a5e46497" />
+## Assi-8
+
+```
+class ReverseArrayy {
+
+    void reverse(int arr[]) {
+        int start = 0;
+        int end = arr.length - 1;
+
+        while(start < end) {
+            int temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
+
+            start++;
+            end--;
+        }
+    }
+}
+
+public class ReverseArray {
+    public static void main(String[] args) {
+
+        int arr[] = {1, 2, 3, 4, 5};
+
+        ReverseArrayy obj = new ReverseArrayy();
+        obj.reverse(arr);
+
+        System.out.println("Reversed Array:");
+
+        for(int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+}
+```
+<img width="413" height="216" alt="image" src="https://github.com/user-attachments/assets/d3adb5db-3e5a-4b6e-9103-c7fc26add4a3" />
 
 
