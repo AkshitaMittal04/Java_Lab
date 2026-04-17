@@ -16,9 +16,13 @@
 
 [Program-08 Write a class to reverse a 1D array.](#Assi-8)
 
-[Program  Write a program using three classes to print 1-100 ,1-100,1-100 with and without thread and analyse the output and repeat the same program using runnable interface.]
+[Program-09 Write a class to perform the sum of each row and column.](Assi-9)
 
-[Program Using the concept of multithreading the output of all three threads must be synchronised.]
+[Program-10 Write a C class program in java.](Assi-10)
+
+[Program-11  Write a program using three classes to print 1-100 ,1-100,1-100 with and without thread and analyse the output and repeat the same program using runnable interface.](Assi-11)
+
+[Program-12  Using the concept of multithreading the output of all three threads must be synchronised.](Assi-12)
 
 
 ## Assi-1
@@ -418,4 +422,7 @@ class MatrixSum {
 }
 ```
 <img width="310" height="277" alt="image" src="https://github.com/user-attachments/assets/a5046dc0-7967-4970-8a1d-70b5149ef0d0" />
+
+## Assi-10
+
 
