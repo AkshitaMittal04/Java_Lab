@@ -375,4 +375,47 @@ public class ReverseArray {
 ```
 <img width="413" height="216" alt="image" src="https://github.com/user-attachments/assets/d3adb5db-3e5a-4b6e-9103-c7fc26add4a3" />
 
+## Assi-9
+
+```
+class MatrixSum {
+
+    int matrix[][] = {
+        { 1, 2, 3 },
+        { 4, 5, 6 },
+        { 7, 8, 9 }
+    };
+
+    void rowSum() {
+        for (int i = 0; i < matrix.length; i++) {
+            int sum = 0;
+            for (int j = 0; j < matrix[i].length; j++) {
+                sum += matrix[i][j];
+            }
+            System.out.println("Sum of Row " + (i + 1) + " = " + sum);
+        }
+    }
+
+    void columnSum() {
+        for (int i = 0; i < matrix[0].length; i++) {
+            int sum = 0;
+            for (int j = 0; j < matrix.length; j++) {
+                sum += matrix[j][i];
+            }
+            System.out.println("Sum of Column " + (i + 1) + " = " + sum);
+        }
+    }
+
+    public static void main(String[] args) {
+        MatrixSum obj = new MatrixSum();
+
+        System.out.println("Row Sums:");
+        obj.rowSum();
+
+        System.out.println("\nColumn Sums:");
+        obj.columnSum();
+    }
+}
+```
+<img width="310" height="277" alt="image" src="https://github.com/user-attachments/assets/a5046dc0-7967-4970-8a1d-70b5149ef0d0" />
 
