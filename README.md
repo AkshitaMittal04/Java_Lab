@@ -15,6 +15,12 @@
 [Program-07 Write a class to perform the multiplication of two matrices.](#Assi-7)
 
 [Program-08 Write a class to reverse a 1D array.](#Assi-8)
+
+[Program  Write a program using three classes to print 1-100 ,1-100,1-100 with and without thread and analyse the output and repeat the same program using runnable interface.]
+
+[Program Using the concept of multithreading the output of all three threads must be synchronised.]
+
+
 ## Assi-1
 ```
 
