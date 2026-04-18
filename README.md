@@ -24,6 +24,13 @@
 
 [Program-12  Using the concept of multithreading the output of all three threads must be synchronised.](Assi-12)
 
+[Program-13 WAP to perform the addition of two numbers using swing.](Assi-13)
+
+[Program-14 WAP to make the registration form with 10 elements and send the data into database.](Assi-14)
+
+[Program-15 WAP to make a calculator in swing.](Assi-15)
+
+
 
 ## Assi-1
 ```
