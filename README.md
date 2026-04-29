@@ -614,6 +614,82 @@ public class ThreadJoinDemo {
 }
 ```
 <img width="329" height="373" alt="image" src="https://github.com/user-attachments/assets/5b5d1a39-fd55-46f6-9174-0a4a5e174e7a" />
+```
+// Import required packages for GUI
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+// Class extending JFrame and implementing ActionListener
+public class AdditionGUI extends JFrame implements ActionListener {
+
+    // Declare components
+    JTextField num1, num2, result;
+    JButton addBtn;
+
+    // Constructor to design GUI
+    public AdditionGUI() {
+
+        setTitle("Addition of Two Numbers"); // Set window title
+        setSize(500, 250); // Set window size
+        setLayout(new GridLayout(4, 2, 15, 15)); // Layout with rows, columns, spacing
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Close operation
+
+        // Create text fields
+        num1 = new JTextField();
+        num2 = new JTextField();
+        result = new JTextField();
+
+        result.setEditable(false); // Result field should not be editable
+
+        // Create button
+        addBtn = new JButton("Add");
+        addBtn.setPreferredSize(new Dimension(120, 40));
+
+        // Register event listener
+        addBtn.addActionListener(this);
+
+        // Add components to frame
+        add(new JLabel("Number 1:"));
+        add(num1);
+
+        add(new JLabel("Number 2:"));
+        add(num2);
+
+        add(new JLabel("Result:"));
+        add(result);
+
+        add(new JLabel("")); // Empty label for spacing
+        add(addBtn);
+
+        setLocationRelativeTo(null); // Center the window
+        setVisible(true); // Make frame visible
+    }
+
+    // Event handling method
+    public void actionPerformed(ActionEvent e) {
+        try {
+            // Convert input text to integers
+            int a = Integer.parseInt(num1.getText());
+            int b = Integer.parseInt(num2.getText());
+
+            // Perform addition and display result
+            result.setText(String.valueOf(a + b));
+
+        } catch (Exception ex) {
+            // Show error message if input is invalid
+            JOptionPane.showMessageDialog(this, "Enter valid numbers!");
+        }
+    }
+
+    // Main method
+    public static void main(String[] args) {
+        new AdditionGUI(); // Create object to launch GUI
+    }
+}
+```
+<img width="608" height="300" alt="image" src="https://github.com/user-attachments/assets/2af05562-8599-4497-9bb6-21e44d85b059" />
+
 
 
 
