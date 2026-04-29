@@ -430,6 +430,134 @@ class MatrixSum {
 ```
 <img width="310" height="277" alt="image" src="https://github.com/user-attachments/assets/a5046dc0-7967-4970-8a1d-70b5149ef0d0" />
 
-## Assi-10
+## Assi-11
+```
+
+//  WITHOUT THREAD 
+class A1 {
+    // Method to print numbers from 1 to 100
+    void print() {
+        for (int i = 1; i <= 100; i++) {
+            System.out.println("A (NO THREAD): " + i);
+        }
+    }
+}
+
+class B1 {
+    void print() {
+        for (int i = 1; i <= 100; i++) {
+            System.out.println("B (NO THREAD): " + i);
+        }
+    }
+}
+
+class C1 {
+    void print() {
+        for (int i = 1; i <= 100; i++) {
+            System.out.println("C (NO THREAD): " + i);
+        }
+    }
+}
+
+//  USING THREAD CLASS 
+class A2 extends Thread {
+    // run() method contains the code executed by thread
+    public void run() {
+        for (int i = 1; i <= 100; i++) {
+            System.out.println("A (THREAD): " + i);
+        }
+    }
+}
+
+class B2 extends Thread {
+    public void run() {
+        for (int i = 1; i <= 100; i++) {
+            System.out.println("B (THREAD): " + i);
+        }
+    }
+}
+
+class C2 extends Thread {
+    public void run() {
+        for (int i = 1; i <= 100; i++) {
+            System.out.println("C (THREAD): " + i);
+        }
+    }
+}
+
+//  USING RUNNABLE INTERFACE 
+class A3 implements Runnable {
+    // run() method defines the task for the thread
+    public void run() {
+        for (int i = 1; i <= 100; i++) {
+            System.out.println("A (RUNNABLE): " + i);
+        }
+    }
+}
+
+class B3 implements Runnable {
+    public void run() {
+        for (int i = 1; i <= 100; i++) {
+            System.out.println("B (RUNNABLE): " + i);
+        }
+    }
+}
+
+class C3 implements Runnable {
+    public void run() {
+        for (int i = 1; i <= 100; i++) {
+            System.out.println("C (RUNNABLE): " + i);
+        }
+    }
+}
+
+//  MAIN CLASS 
+public class AllInOneThreads {
+
+    public static void main(String[] args) {
+
+        // WITHOUT THREAD 
+        // Methods are called one after another (sequential execution)
+        System.out.println("===== WITHOUT THREAD =====");
+        new A1().print();
+        new B1().print();
+        new C1().print();
+
+        //  USING THREAD CLASS
+        // Threads run simultaneously (concurrent execution)
+        System.out.println("\n===== WITH THREAD =====");
+
+        A2 t1 = new A2(); // Create thread objects
+        B2 t2 = new B2();
+        C2 t3 = new C2();
+
+        t1.start(); // Start thread execution
+        t2.start();
+        t3.start();
+
+        // join() ensures main thread waits until all threads finish
+        try {
+            t1.join();
+            t2.join();
+            t3.join();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+        // Runnable separates task from thread (better approach)
+        System.out.println("\n===== USING RUNNABLE =====");
+
+        Thread r1 = new Thread(new A3());
+        Thread r2 = new Thread(new B3());
+        Thread r3 = new Thread(new C3());
+
+        r1.start();
+        r2.start();
+        r3.start();
+    }
+}
+```
+<img width="1003" height="443" alt="image" src="https://github.com/user-attachments/assets/740c615b-f9db-4055-ae1a-607a1fc79b7b" />
+
 
 
