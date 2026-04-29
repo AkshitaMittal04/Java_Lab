@@ -884,6 +884,110 @@ public class RegistrationForm extends JFrame implements ActionListener {
 ```
 <img width="732" height="797" alt="image" src="https://github.com/user-attachments/assets/58081e78-4144-4273-b21d-c28fd39b2225" />
 
+## Assi-15
+```
+// Import required packages
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+// Main class
+public class CalculatorGUI extends JFrame implements ActionListener {
+
+    // Display field
+    JTextField display;
+
+    // Variables to store numbers and operator
+    String operator = "";
+    double num1 = 0, num2 = 0;
+
+    // Constructor to design GUI
+    public CalculatorGUI() {
+
+        setTitle("Calculator"); // Set title
+        setSize(300, 400); // Set size
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLayout(new BorderLayout());
+
+        // ===== DISPLAY =====
+        display = new JTextField();
+        display.setFont(new Font("Arial", Font.BOLD, 20));
+        display.setHorizontalAlignment(JTextField.RIGHT);
+        add(display, BorderLayout.NORTH);
+
+        // ===== BUTTON PANEL =====
+        JPanel panel = new JPanel(new GridLayout(4, 4, 5, 5));
+
+        // Button labels
+        String buttons[] = {
+            "7", "8", "9", "/",
+            "4", "5", "6", "*",
+            "1", "2", "3", "-",
+            "0", "C", "=", "+"
+        };
+
+        // Create buttons dynamically
+        for (String text : buttons) {
+            JButton btn = new JButton(text);
+            btn.setFont(new Font("Arial", Font.BOLD, 16));
+            btn.addActionListener(this); // Register event
+            panel.add(btn);
+        }
+
+        add(panel, BorderLayout.CENTER);
+
+        setVisible(true); // Make GUI visible
+    }
+
+    // Event handling method
+    public void actionPerformed(ActionEvent e) {
+
+        String cmd = e.getActionCommand();
+
+        // If number button is pressed
+        if (cmd.matches("[0-9]")) {
+            display.setText(display.getText() + cmd);
+        }
+
+        // If operator button is pressed
+        else if (cmd.matches("[+\\-*/]")) {
+            num1 = Double.parseDouble(display.getText());
+            operator = cmd;
+            display.setText("");
+        }
+
+        // If equals button is pressed
+        else if (cmd.equals("=")) {
+            num2 = Double.parseDouble(display.getText());
+            double result = 0;
+
+            switch (operator) {
+                case "+": result = num1 + num2; break;
+                case "-": result = num1 - num2; break;
+                case "*": result = num1 * num2; break;
+                case "/": result = num1 / num2; break;
+            }
+
+            display.setText(String.valueOf(result));
+        }
+
+        // If clear button is pressed
+        else if (cmd.equals("C")) {
+            display.setText("");
+            num1 = num2 = 0;
+            operator = "";
+        }
+    }
+
+    // Main method
+    public static void main(String[] args) {
+        new CalculatorGUI();
+    }
+}
+```
+<img width="365" height="489" alt="image" src="https://github.com/user-attachments/assets/9126880a-023c-48dc-8056-6b76c7c969ef" />
+
+
 
 
 
