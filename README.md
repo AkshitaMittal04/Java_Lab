@@ -697,6 +697,192 @@ public class AdditionGUI extends JFrame implements ActionListener {
 ```
 <img width="476" height="236" alt="image" src="https://github.com/user-attachments/assets/bad39b8d-fe74-400f-892b-09fc212e675c" />
 
+## Assi-14
+```
+
+// Import required packages
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.sql.*;
+
+// Main class
+public class RegistrationForm extends JFrame implements ActionListener {
+
+    // Declare components
+    JTextField firstNameField, lastNameField, ageField, emailField, phoneField, cityField;
+    JTextArea addressArea;
+    JRadioButton maleBtn, femaleBtn;
+    JComboBox<String> courseBox, branchBox;
+    JButton submitBtn, clearBtn;
+
+    // Constructor to design GUI
+    RegistrationForm() {
+
+        setTitle("Student Registration Form");
+        setSize(600, 650);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+        setLayout(null);
+
+        // Title
+        JLabel title = new JLabel("Student Registration Form");
+        title.setFont(new Font("Arial", Font.BOLD, 24));
+        title.setBounds(140, 20, 350, 40);
+        add(title);
+
+        // First Name
+        add(new JLabel("First Name:")).setBounds(80, 90, 120, 25);
+        firstNameField = new JTextField();
+        firstNameField.setBounds(220, 90, 250, 25);
+        add(firstNameField);
+
+        // Last Name
+        add(new JLabel("Last Name:")).setBounds(80, 130, 120, 25);
+        lastNameField = new JTextField();
+        lastNameField.setBounds(220, 130, 250, 25);
+        add(lastNameField);
+
+        // Gender
+        add(new JLabel("Gender:")).setBounds(80, 170, 120, 25);
+        maleBtn = new JRadioButton("Male");
+        femaleBtn = new JRadioButton("Female");
+
+        maleBtn.setBounds(220, 170, 80, 25);
+        femaleBtn.setBounds(310, 170, 100, 25);
+
+        ButtonGroup bg = new ButtonGroup();
+        bg.add(maleBtn);
+        bg.add(femaleBtn);
+
+        add(maleBtn);
+        add(femaleBtn);
+
+        // Age
+        add(new JLabel("Age:")).setBounds(80, 210, 120, 25);
+        ageField = new JTextField();
+        ageField.setBounds(220, 210, 250, 25);
+        add(ageField);
+
+        // Email
+        add(new JLabel("Email:")).setBounds(80, 250, 120, 25);
+        emailField = new JTextField();
+        emailField.setBounds(220, 250, 250, 25);
+        add(emailField);
+
+        // Phone
+        add(new JLabel("Phone:")).setBounds(80, 290, 120, 25);
+        phoneField = new JTextField();
+        phoneField.setBounds(220, 290, 250, 25);
+        add(phoneField);
+
+        // Course
+        add(new JLabel("Course:")).setBounds(80, 330, 120, 25);
+        courseBox = new JComboBox<>(new String[]{"B.Tech", "BCA", "MCA"});
+        courseBox.setBounds(220, 330, 250, 25);
+        add(courseBox);
+
+        // Branch
+        add(new JLabel("Branch:")).setBounds(80, 370, 120, 25);
+        branchBox = new JComboBox<>(new String[]{"CSE", "IT", "ECE"});
+        branchBox.setBounds(220, 370, 250, 25);
+        add(branchBox);
+
+        // City
+        add(new JLabel("City:")).setBounds(80, 410, 120, 25);
+        cityField = new JTextField();
+        cityField.setBounds(220, 410, 250, 25);
+        add(cityField);
+
+        // Address
+        add(new JLabel("Address:")).setBounds(80, 450, 120, 25);
+        addressArea = new JTextArea();
+        addressArea.setBounds(220, 450, 250, 70);
+        add(addressArea);
+
+        // Buttons
+        submitBtn = new JButton("Submit");
+        submitBtn.setBounds(160, 550, 120, 35);
+        submitBtn.addActionListener(this);
+        add(submitBtn);
+
+        clearBtn = new JButton("Clear");
+        clearBtn.setBounds(310, 550, 120, 35);
+        clearBtn.addActionListener(this);
+        add(clearBtn);
+
+        setVisible(true);
+    }
+
+    // Database Connection Method
+    public Connection getConnection() {
+        try {
+            Class.forName("oracle.jdbc.OracleDriver");
+
+            return DriverManager.getConnection(
+                "jdbc:oracle:thin:@localhost:1521:XE",
+                "stress_user",
+                "Stress123"
+            );
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "DB Error: " + e.getMessage());
+            return null;
+        }
+    }
+
+    // Event Handling
+    public void actionPerformed(ActionEvent e) {
+
+        if (e.getSource() == submitBtn) {
+
+            try {
+                Connection con = getConnection();
+
+                String query = "INSERT INTO registration VALUES (reg_seq.NEXTVAL,?,?,?,?,?,?,?,?,?,?)";
+
+                PreparedStatement pst = con.prepareStatement(query);
+
+                pst.setString(1, firstNameField.getText());
+                pst.setString(2, lastNameField.getText());
+                pst.setString(3, maleBtn.isSelected() ? "Male" : "Female");
+                pst.setInt(4, Integer.parseInt(ageField.getText()));
+                pst.setString(5, emailField.getText());
+                pst.setString(6, phoneField.getText());
+                pst.setString(7, courseBox.getSelectedItem().toString());
+                pst.setString(8, branchBox.getSelectedItem().toString());
+                pst.setString(9, cityField.getText());
+                pst.setString(10, addressArea.getText());
+
+                pst.executeUpdate();
+
+                JOptionPane.showMessageDialog(this, "Registration Successful!");
+                con.close();
+
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(this, "Error: " + ex.getMessage());
+            }
+        }
+
+        // Clear Button
+        if (e.getSource() == clearBtn) {
+            firstNameField.setText("");
+            lastNameField.setText("");
+            ageField.setText("");
+            emailField.setText("");
+            phoneField.setText("");
+            cityField.setText("");
+            addressArea.setText("");
+        }
+    }
+
+    // Main Method
+    public static void main(String[] args) {
+        new RegistrationForm();
+    }
+}
+```
+<img width="732" height="797" alt="image" src="https://github.com/user-attachments/assets/58081e78-4144-4273-b21d-c28fd39b2225" />
 
 
 
