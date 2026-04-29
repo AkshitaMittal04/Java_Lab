@@ -689,11 +689,9 @@ public class AdditionGUI extends JFrame implements ActionListener {
         new AdditionGUI(); // Create object to launch GUI
     }
 }
+
 ```
-
-<img width="608" height="300" alt="image" src="https://github.com/user-attachments/assets/2af05562-8599-4497-9bb6-21e44d85b059" />
-
-
+<img width="613" height="304" alt="image" src="https://github.com/user-attachments/assets/47a69d5f-913f-4292-bb51-7c9e7a787561" />
 
 
 
