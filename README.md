@@ -558,6 +558,64 @@ public class AllInOneThreads {
 }
 ```
 <img width="1003" height="443" alt="image" src="https://github.com/user-attachments/assets/740c615b-f9db-4055-ae1a-607a1fc79b7b" />
+```
+// Program to demonstrate the use of join() method in Java threads
+
+// Custom thread class
+class MyThread extends Thread {
+
+    String name; // to store thread name
+
+    // Constructor to initialize thread name
+    MyThread(String name) {
+        this.name = name;
+    }
+
+    // run() method defines the task of the thread
+    public void run() {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println(name + " -> " + i);
+            try {
+                Thread.sleep(500); // delay for better visibility
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+        }
+    }
+}
+
+// Main class
+public class ThreadJoinDemo {
+
+    public static void main(String[] args) {
+
+        // Creating thread objects
+        MyThread t1 = new MyThread("Thread-1");
+        MyThread t2 = new MyThread("Thread-2");
+        MyThread t3 = new MyThread("Thread-3");
+
+        try {
+            // Start and wait for each thread one by one
+            t1.start();
+            t1.join();   // main thread waits until t1 finishes
+
+            t2.start();
+            t2.join();   // waits for t2
+
+            t3.start();
+            t3.join();   // waits for t3
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+        System.out.println("All threads completed.");
+    }
+}
+```
+<img width="329" height="373" alt="image" src="https://github.com/user-attachments/assets/5b5d1a39-fd55-46f6-9174-0a4a5e174e7a" />
+
+
 
 
 
