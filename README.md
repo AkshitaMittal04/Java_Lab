@@ -614,6 +614,8 @@ public class ThreadJoinDemo {
 }
 ```
 <img width="329" height="373" alt="image" src="https://github.com/user-attachments/assets/5b5d1a39-fd55-46f6-9174-0a4a5e174e7a" />
+
+
 ```
 // Import required packages for GUI
 import javax.swing.*;
@@ -688,6 +690,7 @@ public class AdditionGUI extends JFrame implements ActionListener {
     }
 }
 ```
+
 <img width="608" height="300" alt="image" src="https://github.com/user-attachments/assets/2af05562-8599-4497-9bb6-21e44d85b059" />
 
 
