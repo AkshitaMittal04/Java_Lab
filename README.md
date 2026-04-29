@@ -558,6 +558,8 @@ public class AllInOneThreads {
 }
 ```
 <img width="1003" height="443" alt="image" src="https://github.com/user-attachments/assets/740c615b-f9db-4055-ae1a-607a1fc79b7b" />
+
+## Assi-12
 ```
 // Program to demonstrate the use of join() method in Java threads
 
@@ -615,6 +617,8 @@ public class ThreadJoinDemo {
 ```
 <img width="329" height="373" alt="image" src="https://github.com/user-attachments/assets/5b5d1a39-fd55-46f6-9174-0a4a5e174e7a" />
 
+
+## Assi-13
 
 ```
 // Import required packages for GUI
@@ -691,7 +695,8 @@ public class AdditionGUI extends JFrame implements ActionListener {
 }
 
 ```
-<img width="613" height="304" alt="image" src="https://github.com/user-attachments/assets/47a69d5f-913f-4292-bb51-7c9e7a787561" />
+<img width="476" height="236" alt="image" src="https://github.com/user-attachments/assets/bad39b8d-fe74-400f-892b-09fc212e675c" />
+
 
 
 
