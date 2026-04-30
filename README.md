@@ -32,6 +32,8 @@
 
 [Program-16 WAP for the matrix addition using swing class.](Assi-16)
 
+[Program-17 Create one jframe apply 10 buttons on that after clicking on each button a new structure is created.](Assi-17)
+
 
 
 ## Assi-1
@@ -1093,6 +1095,111 @@ public class MatrixAdditionGUI extends JFrame implements ActionListener {
 ```
 <img width="591" height="492" alt="image" src="https://github.com/user-attachments/assets/f5d7f057-4b93-46ea-8bb8-b192264c31e4" />
 
+
+## Assi-17
+```
+// Import required packages
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+// Main class
+public class ShapeDrawer extends JFrame implements ActionListener {
+
+    String shape = ""; // stores selected shape
+
+    // Constructor to design GUI
+    public ShapeDrawer() {
+
+        setTitle("Shape Drawer"); // Title
+        setSize(600, 500); // Window size
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLayout(new BorderLayout());
+
+        // Panel for buttons
+        JPanel panel = new JPanel(new GridLayout(2, 5));
+
+        // Button names
+        String buttons[] = {
+            "Circle", "Oval", "Rectangle", "Square", "Line",
+            "Arc", "RoundRect", "3D Rect", "Fill Oval", "Fill Rect"
+        };
+
+        // Create buttons dynamically
+        for (String name : buttons) {
+            JButton btn = new JButton(name);
+            btn.addActionListener(this); // Register event
+            panel.add(btn);
+        }
+
+        add(panel, BorderLayout.NORTH);
+
+        setVisible(true); // Show GUI
+    }
+
+    // Event handling method
+    public void actionPerformed(ActionEvent e) {
+        shape = e.getActionCommand(); // Get button name
+        repaint(); // Redraw screen
+    }
+
+    // Method to draw shapes
+    public void paint(Graphics g) {
+        super.paint(g);
+
+        g.setColor(Color.BLUE); // Set drawing color
+
+        switch (shape) {
+
+            case "Circle":
+                g.drawOval(200, 150, 100, 100);
+                break;
+
+            case "Oval":
+                g.drawOval(200, 150, 150, 100);
+                break;
+
+            case "Rectangle":
+                g.drawRect(200, 150, 150, 100);
+                break;
+
+            case "Square":
+                g.drawRect(200, 150, 100, 100);
+                break;
+
+            case "Line":
+                g.drawLine(200, 150, 350, 250);
+                break;
+
+            case "Arc":
+                g.drawArc(200, 150, 150, 100, 0, 180);
+                break;
+
+            case "RoundRect":
+                g.drawRoundRect(200, 150, 150, 100, 30, 30);
+                break;
+
+            case "3D Rect":
+                g.draw3DRect(200, 150, 150, 100, true);
+                break;
+
+            case "Fill Oval":
+                g.fillOval(200, 150, 150, 100);
+                break;
+
+            case "Fill Rect":
+                g.fillRect(200, 150, 150, 100);
+                break;
+        }
+    }
+
+    // Main method
+    public static void main(String[] args) {
+        new ShapeDrawer();
+    }
+}
+```
+<img width="731" height="615" alt="image" src="https://github.com/user-attachments/assets/dbb97b35-7341-4f34-9ee5-0307579f0bed" />
 
 
 
