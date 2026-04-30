@@ -38,7 +38,8 @@
 
 [Program-19 Create a package of any 5 classes of your choice and import it.](Assi-19)
 
-[Program-20 Create one small array of size 5 apply array out of bounds exception using try catch give a proper message in catch and demonstrate the exception exactly in the same fashion demonstrate arithmetic exception.] (Assi-20)
+[Program-20 Create one small array of size 5 apply array out of bounds exception using try catch give a proper message in catch and demonstrate the exception exactly in the same fashion demonstrate arithmetic exception .](Assi-20)
+
 
 
 
