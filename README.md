@@ -40,6 +40,9 @@
 
 [Program-20 Create one small array of size 5 apply array out of bounds exception using try catch give a proper message in catch and demonstrate the exception exactly in the same fashion demonstrate arithmetic exception .](Assi-20)
 
+[Program-21 To test the range of age of one student.write a program using user defined exception.](Assi-21)
+
+
 
 
 
