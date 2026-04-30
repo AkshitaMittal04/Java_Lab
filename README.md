@@ -34,6 +34,13 @@
 
 [Program-17 Create one jframe apply 10 buttons on that after clicking on each button a new structure is created.](Assi-17)
 
+[Program-18 Just using mouse Event create a frame like paint brush with selection of colour and width .](Assi-18)
+
+[Program-19 Create a package of any 5 classes of your choice and import it.](Assi-19)
+
+[Program-20 Create one small array of size 5 apply array out of bounds exception using try catch give a proper message in catch and demonstrate the exception exactly in the same fashion demonstrate arithmetic exception.] (Assi-20)
+
+
 
 
 ## Assi-1
