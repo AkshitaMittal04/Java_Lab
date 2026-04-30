@@ -1216,6 +1216,99 @@ public class ShapeDrawer extends JFrame implements ActionListener {
 ```
 <img width="731" height="615" alt="image" src="https://github.com/user-attachments/assets/dbb97b35-7341-4f34-9ee5-0307579f0bed" />
 
+## Assi-18
+```
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.awt.image.BufferedImage;
+
+public class PaintBrush extends JFrame {
+
+    BufferedImage canvas;
+    Color currentColor = Color.BLACK;
+    int brushSize = 3;
+
+    int x1, y1, x2, y2;
+
+    public PaintBrush() {
+
+        setTitle("Paint Brush (Improved)");
+        setSize(600, 500);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        // Canvas
+        canvas = new BufferedImage(600, 500, BufferedImage.TYPE_INT_ARGB);
+
+        JPanel drawPanel = new JPanel() {
+            protected void paintComponent(Graphics g) {
+                super.paintComponent(g);
+                g.drawImage(canvas, 0, 0, null);
+            }
+        };
+
+        drawPanel.addMouseListener(new MouseAdapter() {
+            public void mousePressed(MouseEvent e) {
+                x1 = e.getX();
+                y1 = e.getY();
+            }
+        });
+
+        drawPanel.addMouseMotionListener(new MouseMotionAdapter() {
+            public void mouseDragged(MouseEvent e) {
+                x2 = e.getX();
+                y2 = e.getY();
+
+                Graphics2D g2 = canvas.createGraphics();
+                g2.setColor(currentColor);
+                g2.setStroke(new BasicStroke(brushSize));
+                g2.drawLine(x1, y1, x2, y2);
+                g2.dispose();
+
+                x1 = x2;
+                y1 = y2;
+
+                drawPanel.repaint();
+            }
+        });
+
+        // Top Panel
+        JPanel panel = new JPanel();
+
+        JButton red = new JButton("Red");
+        JButton blue = new JButton("Blue");
+        JButton green = new JButton("Green");
+
+        JComboBox<String> widthBox = new JComboBox<>(new String[]{"2", "5", "10"});
+
+        panel.add(red);
+        panel.add(blue);
+        panel.add(green);
+        panel.add(new JLabel("Brush Size:"));
+        panel.add(widthBox);
+
+        red.addActionListener(e -> currentColor = Color.RED);
+        blue.addActionListener(e -> currentColor = Color.BLUE);
+        green.addActionListener(e -> currentColor = Color.GREEN);
+
+        widthBox.addActionListener(e -> {
+            brushSize = Integer.parseInt((String) widthBox.getSelectedItem());
+        });
+
+        add(panel, BorderLayout.NORTH);
+        add(drawPanel);
+
+        setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        new PaintBrush();
+    }
+}
+```
+<img width="711" height="608" alt="image" src="https://github.com/user-attachments/assets/6e93db79-6390-42b4-b1e8-52292761790a" />
+
+
 
 
 
