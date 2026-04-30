@@ -1471,6 +1471,54 @@ public class FileHandlingDemo {
 ```
 <img width="847" height="195" alt="image" src="https://github.com/user-attachments/assets/8c160867-b385-4a1f-94e5-c8ca9d20e7cf" />
 
+## Assi-23
+```
+interface Vehicle {
+    void start();
+    void stop();
+}
+
+// Abstract Class
+abstract class Machine {
+    abstract void fuelType();
+
+    void display() {
+        System.out.println("This is a machine");
+    }
+}
+
+// Parent Class (Inheritance)
+class Car extends Machine implements Vehicle {
+
+    // Implementing interface methods
+    public void start() {
+        System.out.println("Car starts with key");
+    }
+
+    public void stop() {
+        System.out.println("Car stops using brake");
+    }
+
+    // Implementing abstract method
+    void fuelType() {
+        System.out.println("Fuel Type: Petrol/Diesel");
+    }
+}
+
+// Main Class
+public class Main {
+    public static void main(String[] args) {
+
+        Car c = new Car();
+
+        c.display();      // from abstract class (concrete method)
+        c.fuelType();     // abstract method
+        c.start();        // interface method
+        c.stop();         // interface method
+    }
+}
+```
+<img width="526" height="169" alt="image" src="https://github.com/user-attachments/assets/14ccdf89-5725-43ba-adf8-bda59d88cb11" />
 
 
 
