@@ -1309,6 +1309,104 @@ public class PaintBrush extends JFrame {
 <img width="711" height="608" alt="image" src="https://github.com/user-attachments/assets/6e93db79-6390-42b4-b1e8-52292761790a" />
 
 
+## Assi-21
+```
+public class ExceptionDemo {
+
+    public static void main(String[] args) {
+
+        // -------- ARRAY OUT OF BOUNDS --------
+        try {
+            int arr[] = {10, 20, 30, 40, 50};
+
+            System.out.println("Valid access: " + arr[2]);
+
+            // this will cause exception
+            System.out.println("Invalid access: " + arr[8]);
+
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Exception: Array index is out of bounds! Please access valid index.");
+        }
+
+
+        // -------- ARITHMETIC EXCEPTION --------
+        try {
+            int a = 10;
+            int b = 0;
+
+            int result = a / b; // will cause exception
+
+            System.out.println("Result: " + result);
+
+        } catch (ArithmeticException e) {
+            System.out.println("Exception: Division by zero is not allowed!");
+        }
+
+        // this line will always execute
+        System.out.println("Program executed successfully.");
+    }
+}
+```
+<img width="638" height="218" alt="image" src="https://github.com/user-attachments/assets/a21c71dd-09c7-46b3-8fc3-83e235d67535" />
+
+## Assi-22
+```
+import java.util.Scanner;
+
+// user defined exception
+class InvalidAgeException extends Exception {
+
+    // constructor
+    InvalidAgeException(String message) {
+        super(message);
+    }
+}
+
+// main class (must match file name)
+public class Student1 {
+
+    int age;
+
+    // method to check age
+    void checkAge() throws InvalidAgeException {
+
+        if (age < 18) {
+            throw new InvalidAgeException("Age is too low. Not eligible.");
+        } 
+        else if (age > 60) {
+            throw new InvalidAgeException("Age is too high. Not eligible.");
+        } 
+        else {
+            System.out.println("Valid Age. Student is eligible.");
+        }
+    }
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        Student1 s = new Student1(); // object
+
+        System.out.print("Enter age: ");
+        s.age = sc.nextInt();
+
+        try {
+            s.checkAge(); // call method
+        } 
+        catch (InvalidAgeException e) {
+            System.out.println("Exception: " + e.getMessage());
+        }
+
+        sc.close();
+    }
+}
+```
+
+<img width="447" height="221" alt="image" src="https://github.com/user-attachments/assets/89cedb12-adfa-4625-9735-2569becc8907" />
+
+
+
+
 
 
 
