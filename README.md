@@ -44,6 +44,8 @@
 
 [Program-22 File Handling Programs (given in the PPT)](Assi-22)
 
+[Program-23 Inheritance Programs, using interface and abstract classes.](Assi-23)
+
 
 
 
